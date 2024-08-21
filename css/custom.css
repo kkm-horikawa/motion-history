@@ -1,0 +1,29 @@
+/* Material テーマの場合 */
+.md-typeset h2::before {
+    display: inline-block !important;
+    font-family: "FontAwesome";
+    content: "\f0a9" !important;
+    margin-right: .3em;
+}
+
+.md-typeset > ::before {
+    font-family: "FontAwesome";
+    margin-right: .3em;
+    display: inline-block !important;
+}
+
+.md-typeset h1 {
+  /*font-size: 24pt;*/
+  content: "\f02d " !important;
+  font-weight: bold;
+  border-bottom: solid 2px #f18b21;
+  padding-bottom: 5px;
+}
+
+.md-typeset h2::before {
+    content: "\f0a9" !important;
+}
+
+.md-typeset h3::before {
+    content: "\f0a9" !important;
+}
