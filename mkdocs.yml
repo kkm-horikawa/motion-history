@@ -1,0 +1,112 @@
+site_name: MotionHistory documentation
+site_description: MotionHistoryのドキュメント
+site_author: kkm-horikawa
+copyright: Copyright &copy; 2024 kkm-horikawa
+
+theme:
+  name: material
+  language: ja
+  icon:
+    logo: material/brush
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: green
+      accent: light green
+      toggle:
+        icon:  material/toggle-switch-off-outline
+        name: ダークモードに切り替えます。
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: 'teal'
+      accent: 'orange'
+      toggle:
+        icon: material/toggle-switch
+        name: ライトモードに切り替えます。
+  features:
+    - search.suggest         ## 検索の候補リスト表示を表示する
+    - search.highlight       ## 検索で一致した結果をハイライトする
+    - header.autohide        ## スクロールするとヘッダーを自動的に非表示にする
+    - navigation.tabs        ## タブを使用してページをナビゲートする
+    - content.code.copy     ## コードブロックにコピー機能を追加する
+    - content.code.select  ## コードブロックの選択機能を追加する
+    - content.code.annotate ## コードブロックに注釈機能を追加する
+
+  logo: /images/favicon.ico
+  favicon: /images/favicon.ico
+  font:
+    text: Roboto
+    code: Roboto Mono
+  custom_dir: docs/overrides
+
+extra:
+  generator: true # ページの生成日を表示
+  # alternate:
+  #   - name: English
+  #     link: /en/
+  #     lang: en
+  #   - name: Japanese
+  #     link: /
+  #     lang: ja
+  homepage: https://github.com/kkm-horikawa/motion-history
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: plantuml
+          class: plantuml
+          format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: graphviz
+          class: graphviz
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true # タブ機能　すべてで使えるわけでは無いが、プレビューとソース的使い方
+  - pymdownx.tasklist:
+      custom_checkbox: true # チェックリスト機能
+      clickable_checkbox: true
+  - pymdownx.magiclink # URLっぽいものは自動リンク機能
+  - footnotes # 注釈機能
+  - pymdownx.inlinehilite # インラインコードハイライト機能
+  - admonition # 注意書き機能
+  - pymdownx.details # 詳細表示機能
+  - def_list # 定義リスト機能
+  - footnotes # 脚注機能
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.keys # キーボードキー表示機能
+  - pymdownx.highlight: # コードハイライト機能
+      use_pygments: true
+      noclasses: true
+      pygments_style: vs # ex: monokai, github, xcode, vs, zenburn
+      linenums: true
+  - pymdownx.tilde # テキストの打ち消し線機能
+  - pymdownx.caret # テキストの挿入線機能
+  - pymdownx.mark # テキストのハイライト機能
+  - pymdownx.smartsymbols # スマートシンボル機能
+  - plantuml_markdown:
+      server: http://www.plantuml.com/plantuml
+      format: svg # png, svg, txt
+
+plugins:
+  - git-revision-date # ファイル更新日を表示 git使わない場合はコメントアウト
+  - search:
+      separator: '[\s\-\.]' # インデックス対象の条件
+  - encryptcontent:
+      title_prefix: '[ロック]'
+      summary: '暗号化されたコンテンツ'
+      placeholder: 'パスワードを入力してください。'
+      decryption_failure_message: 'パスワードが違います。'
+      encryption_info_message: "このページを閲覧するにはパスワードが必要です。"
+      password_button: True
+      password_button_text: '解除'
+      password_file : 'passwords.yml'
+
+
+extra_css:
+    - "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    - "css/custom.css"

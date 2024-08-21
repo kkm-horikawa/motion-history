@@ -1,0 +1,33 @@
+name: 機能リクエスト
+description: 機能リクエスト用のテンプレート
+body:
+  - type: textarea
+    attributes:
+      label: 機能の概要
+      description: 追加・変更する機能の内容を簡潔に記入してください。
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 背景
+      description: 機能の追加・変更の背景を記入してください。
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 目的
+      description: 機能の追加・変更の目的を記入してください。
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 提案
+      description: 機能の追加・変更の提案を記入してください。
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: その他の情報
+      description: その他に関連する情報があれば記入してください。
+    validations:
+      required: false
